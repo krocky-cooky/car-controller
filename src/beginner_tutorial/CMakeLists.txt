@@ -65,6 +65,28 @@ target_link_libraries(talker_cos ${catkin_LIBRARIES})
 add_executable(middle_sum src/middle_sum.cpp)
 target_link_libraries(middle_sum ${catkin_LIBRARIES})
 
+
+add_executable(speed src/speed.cpp)
+target_link_libraries(speed ${catkin_LIBRARIES})
+
+add_executable(x_y_theta_array src/x_y_theta_array.cpp)
+target_link_libraries(x_y_theta_array ${catkin_LIBRARIES})
+
+add_executable(view_point_x_y_theta_array src/view_point_x_y_theta_array.cpp)
+target_link_libraries(view_point_x_y_theta_array ${catkin_LIBRARIES})
+
+add_executable(target_x_y_array src/target_x_y_array.cpp)
+target_link_libraries(target_x_y_array ${catkin_LIBRARIES})
+
+add_executable(horizontal_diviation src/horizontal_diviation.cpp)
+target_link_libraries(horizontal_diviation ${catkin_LIBRARIES})
+
+add_executable(steering src/steering.cpp)
+target_link_libraries(steering ${catkin_LIBRARIES})
+
+
+
+
 add_executable(kuroki src/kuroki.cpp)
 add_dependencies(kuroki ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(kuroki ${catkin_LIBRARIES})
