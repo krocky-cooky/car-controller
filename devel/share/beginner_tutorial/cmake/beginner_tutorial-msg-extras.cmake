@@ -1,0 +1,1 @@
+/home/adp/catkin_ws/devel/.private/beginner_tutorial/share/beginner_tutorial/cmake/beginner_tutorial-msg-extras.cmake

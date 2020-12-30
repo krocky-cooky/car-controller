@@ -1,0 +1,1 @@
+/home/adp/catkin_ws/devel/.private/beginner_tutorial/share/gennodejs/ros/beginner_tutorial/msg/carPosition.js

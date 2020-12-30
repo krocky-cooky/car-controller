@@ -1,0 +1,1 @@
+/home/adp/catkin_ws/devel/.private/beginner_tutorial/share/roseus/ros/beginner_tutorial/manifest.l

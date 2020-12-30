@@ -1,0 +1,1 @@
+/home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/python2.7/dist-packages/beginner_tutorial/__init__.py
