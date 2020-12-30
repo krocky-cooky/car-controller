@@ -11,7 +11,7 @@ void timer_callback(const ros::TimerEvent& e){
     //目標コースとしてx軸を想定
     ++count;
     target_x_y_array.data[0] = 8.33f*0.025*(float)count;
-    target_x_y_array.data[1] = 0;
+    target_x_y_array.data[1] = 1.0;
     
     ROS_INFO("x: %.1f  y: %.1f", target_x_y_array.data[0], target_x_y_array.data[1]);
     target_x_y_array_pub.publish(target_x_y_array);
