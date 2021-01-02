@@ -22,7 +22,7 @@ def call_back(data):
     #print(time.time())
 
 def listener():
-    rospy.init_node('visdom_plot')
+    rospy.init_node('plot')
     rospy.loginfo('This is drawing node')
     rospy.Subscriber('/car_position',carPosition,call_back)
     rospy.spin()
