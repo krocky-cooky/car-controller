@@ -26,7 +26,7 @@ void target_x_y_array_callback(const std_msgs::Float32MultiArray::ConstPtr& targ
   horizontal_diviation.data = 1000;
   int i;
   int iter;
-  iter = 500
+  iter = 500;
   for (i=0; i<iter; i++) {
   delta_x = buf_view_point_x_y_theta_array[0] - target_x_y_array->data.at(2*i);
   delta_y = buf_view_point_x_y_theta_array[1] - target_x_y_array->data.at(2*i+1);
