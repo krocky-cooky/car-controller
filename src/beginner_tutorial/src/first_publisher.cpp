@@ -12,6 +12,7 @@ int main(int argc,char **argv){
 	beginner_tutorial::steerAndVelocity message;
 	message.steer = 10;
 	message.velocity = 8.33f;
+	sleep(3);
 	pub.publish(message);
 	return 0;
 }

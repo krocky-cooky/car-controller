@@ -6,7 +6,7 @@
 
 ros::Publisher steering_pub;
 beginner_tutorial::steerAndVelocity sv;
-const float gain = 2.0;
+const float gain = 0.1;
 const float vel = 8.33f;
 
 void horizontal_diviation_callback(const std_msgs::Float32::ConstPtr& horizontal_diviation){
@@ -23,6 +23,7 @@ void horizontal_diviation_callback(const std_msgs::Float32::ConstPtr& horizontal
 int main(int argc, char **argv){
 
   ros::init(argc, argv, "steering");
+  ROS_INFO("steering node started!");
 
   ros::NodeHandle n;
   steering_pub = n.advertise<beginner_tutorial::steerAndVelocity>("positionTalker", 1000);

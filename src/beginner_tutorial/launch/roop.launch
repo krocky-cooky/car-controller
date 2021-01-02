@@ -5,4 +5,5 @@
 	<node name="horizontal_diviation" pkg="beginner_tutorial" type="horizontal_diviation" output="screen" launch-prefix="gnome-terminal --command" />
 	<node name="steering" pkg="beginner_tutorial" type="steering" output="screen" launch-prefix="gnome-terminal --command" />
 	<node name="plotter" pkg="beginner_tutorial" type="plot.py" output="screen" launch-prefix="gnome-terminal --command" />
+	<node name="first_publisher" pkg="beginner_tutorial" type="first_publisher" output="screen" launch-prefix="gnome-terminal --command" />
 </launch>
