@@ -28,7 +28,7 @@ void x_y_theta_array_callback(const beginner_tutorial::carPosition::ConstPtr& x_
 
 int main(int argc, char **argv){
 
-  ros::init(argc, argv, "forward_veiw_point");
+  ros::init(argc, argv, "veiw_point_x_y_theta_array");
 
   ros::NodeHandle n;
   veiw_point_x_y_theta_array_pub = n.advertise<beginner_tutorial::carPosition>("view_point_x_y_theta_array",1000);
