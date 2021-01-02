@@ -18,7 +18,7 @@ void speed_callback(const std_msgs::Float32::ConstPtr& speed){
 }
 
 void x_y_theta_array_callback(const beginner_tutorial::carPosition::ConstPtr& x_y_theta_array){
-  veiw_point_x_y_theta_array.x = x_y_theta_arrray->x+buf_for_speed*Tp* cos(x_y_theta_array->yaw);
+  veiw_point_x_y_theta_array.x = x_y_theta_array->x+buf_for_speed*Tp* cos(x_y_theta_array->yaw);
   veiw_point_x_y_theta_array.y = x_y_theta_array->y+buf_for_speed*Tp* sin(x_y_theta_array->yaw);
   veiw_point_x_y_theta_array.yaw = x_y_theta_array->yaw;
 
@@ -31,9 +31,7 @@ int main(int argc, char **argv){
   ros::init(argc, argv, "forward_veiw_point");
 
   ros::NodeHandle n;
-  veiw_point_x_y_theta_array.data.resize(3);
   veiw_point_x_y_theta_array_pub = n.advertise<beginner_tutorial::carPosition>("view_point_x_y_theta_array",1000);
-  ros::Subscriber speed_sub = n.subscribe("speed", 1000, speed_callback);
   ros::Subscriber x_y_theta_array_sub = n.subscribe("car_position", 1000, x_y_theta_array_callback);
 
   ros::spin();

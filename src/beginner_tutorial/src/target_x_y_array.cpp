@@ -25,7 +25,7 @@ int main(int argc, char **argv){
   target_x_y_array.data.resize(3);
   target_x_y_array_pub = n.advertise<std_msgs::Float32MultiArray>("target_x_y_array", 2);
 
-  ros::Timer timer = n.createTimer(ros::Duration(0.025), timer_callback);
+  ros::Timer timer = n.createTimer(ros::Duration(0.02),timer_callback);
   ros::spin();
 
   return 0;

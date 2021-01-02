@@ -5,13 +5,13 @@
 #include "beginner_tutorial/carPosition.h"
 
 
-double FREQUENCY = 1000;
+double FREQUENCY = 20;
 
 struct Car{
 	double x,y; // position of the car
 	double yaw; // yaw of the car
 	double dt;
-	const double lr=1.6,lf=1.1,kr=60,kf=55,ksw=1,m=1500;
+	const double lr=1.6,lf=1.1,kr=60,kf=55,ksw=100,m=1500;
 	Car(double _dt):x(0),y(0),yaw(0){
 	dt = _dt/1000;
 	}
@@ -37,8 +37,8 @@ Car mycar(FREQUENCY);
 ros::Publisher pub;
 
 void yawRateCallback(const beginner_tutorial::steerAndVelocity::ConstPtr& msg){
-	double st = msg->steer
-	float vel=8.33f
+	double st = msg->steer;
+	double vel=8.33f;
 	mycar.move(st,vel);
 	ROS_INFO("x : %lf,y : %lf,yaw : %lf",mycar.x,mycar.y,mycar.yaw);
 	beginner_tutorial::carPosition message;
