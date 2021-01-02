@@ -45,6 +45,7 @@ void target_x_y_array_callback(const std_msgs::Float32MultiArray::ConstPtr& targ
   int i;
   int iter;
   iter = 500;
+  ROS_INFO("target callback");
   for (i=0; i<iter; i++) {
   buf_target_x_y_array[2*i] = target_x_y_array->data.at(2*i);
   buf_target_x_y_array[2*i+1] = target_x_y_array->data.at(2*i);
@@ -78,6 +79,14 @@ void view_point_x_y_theta_array_callback(const beginner_tutorial::carPosition::C
 int main(int argc, char **argv){
 
   ros::init(argc, argv, "horizontal_diviation");
+
+  for(int i = 0; i < 3; ++i){
+	  buf_view_point_x_y_theta_array[i] = 0;
+  }
+  for(int i = 0;i < 1000; ++i){
+	  buf_target_x_y_array[i] = 0;
+  }
+  ROS_INFO("horizontal_diviation node started!");
 
   ros::NodeHandle n;
   horizontal_diviation_pub = n.advertise<std_msgs::Float32>("horizontal_diviation", 1000);
