@@ -47,7 +47,7 @@ int main(int argc, char **argv){
   ros::NodeHandle n;
   horizontal_diviation_pub = n.advertise<std_msgs::Float32>("horizontal_diviation", 1000);
   ros::Subscriber view_point_x_y_theta_array_sub = n.subscribe("view_point_x_y_theta_array", 1000, view_point_x_y_theta_array_callback);
-  ros::Subscriber target_x_y_array_sub = n.subscribe("target_x_y_array", 100000, target_x_y_array_callback);
+  ros::Subscriber target_x_y_array_sub = n.subscribe("target_x_y_array", 1000, target_x_y_array_callback);
 
   ros::spin();
 

@@ -1,7 +1,6 @@
 #include "ros/ros.h"
 #include <std_msgs/Float32MultiArray.h>
 #include <math.h>
-#include "beginner_tutorial/carPosition.h"
 
 
 ros::Publisher target_x_y_array_pub;
@@ -40,6 +39,7 @@ void timer_callback(const ros::TimerEvent& e){
 
 /*
 int count = 0;
+
 void timer_callback(const ros::TimerEvent& e){
     //目標コースとしてx軸を想定
     ++count;
@@ -57,9 +57,9 @@ int main(int argc, char **argv){
 
   ros::NodeHandle n;
   target_x_y_array.data.resize(3);
-  target_x_y_array_pub = n.advertise<std_msgs::Float32MultiArray>("target_x_y_array", 1000);
-  ros::Subscriber x_y_theta_array_sub = n.subscribe("car_position", 1000, x_y_theta_array_callback);
-  ros::Timer timer = n.createTimer(ros::Duration(10), timer_callback);
+  target_x_y_array_pub = n.advertise<std_msgs::Float32MultiArray>("target_x_y_array", 2);
+
+  ros::Timer timer = n.createTimer(ros::Duration(0.025), timer_callback);
   ros::spin();
 
   return 0;
