@@ -38,7 +38,7 @@ ros::Publisher pub;
 
 void yawRateCallback(const beginner_tutorial::steerAndVelocity::ConstPtr& msg){
 	double st = msg->steer;
-	double vel=8.33f;
+	double vel= msg->velocity;
 	mycar.move(st,vel);
 	ROS_INFO("x : %lf,y : %lf,yaw : %lf",mycar.x,mycar.y,mycar.yaw);
 	beginner_tutorial::carPosition message;

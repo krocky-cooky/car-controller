@@ -25,6 +25,7 @@ beginner_tutorial
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/beginner_tutorial/view_point_x_y_theta_array /home/adp/catkin_ws/devel/lib/beginner_tutorial/view_point_x_y_theta_array
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/beginner_tutorial/posTalker /home/adp/catkin_ws/devel/lib/beginner_tutorial/posTalker
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/beginner_tutorial/talker /home/adp/catkin_ws/devel/lib/beginner_tutorial/talker
+/home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/beginner_tutorial/first_publisher /home/adp/catkin_ws/devel/lib/beginner_tutorial/first_publisher
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/pkgconfig/beginner_tutorial.pc /home/adp/catkin_ws/devel/lib/pkgconfig/beginner_tutorial.pc
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/share/roseus/ros/beginner_tutorial/manifest.l /home/adp/catkin_ws/devel/share/roseus/ros/beginner_tutorial/manifest.l
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/share/roseus/ros/beginner_tutorial/msg/carPosition.l /home/adp/catkin_ws/devel/share/roseus/ros/beginner_tutorial/msg/carPosition.l

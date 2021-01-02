@@ -7,7 +7,7 @@
 ros::Publisher steering_pub;
 beginner_tutorial::steerAndVelocity sv;
 const float gain = 2.0;
-const float vel = 0;
+const float vel = 8.33f;
 
 void horizontal_diviation_callback(const std_msgs::Float32::ConstPtr& horizontal_diviation){
 
