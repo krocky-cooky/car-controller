@@ -29,7 +29,8 @@ void timer_callback(const ros::TimerEvent& e){
     for (i=0; i<iter; i++) {
     x = buf_x_y_theta_array[0] + space*i;
     target_x_y_array.data[2*i] = x;
-    target_x_y_array.data[2*i+1] = 1+sin(6.28 * x / 166.6);
+    //target_x_y_array.data[2*i+1] = 1+sin(6.28 * x / 166.6);
+    target_x_y_array.data[2*i+1] = 1;
     //ROS_INFO("x: %.1f  y: %.1f", target_x_y_array.data[2*i], target_x_y_array.data[2*i+1]);
     }
     
