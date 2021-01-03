@@ -13,7 +13,7 @@ struct Car{
 	double dt;
 	double lr,lf,kr,kf,ksw,m;
 	Car(double _dt):x(0),y(0),yaw(0){
-		lr=1.6;lf=1.1;kr=60;kf=55;ksw=100;m=1500;
+		lr=1.6;lf=1.1;kr=60;kf=55;ksw=10;m=1500;
 		dt = _dt/1000;
 	}
 
@@ -24,10 +24,11 @@ struct Car{
 		double gamma = vel*delta/(1+A*vel*vel)/l;
 		double beta = (1-m*lf*vel*vel/(2*l*lr*kr))*lr*delta;
 		beta /= (1+A*vel*vel)*l;
-
+		ROS_INFO("beta : %lf",beta);
+		beta = 0;
 		double dx = vel*std::cos(yaw + beta)*dt;
 		double dy = vel*std::sin(yaw + beta)*dt;
-		double dyaw = st*dt;
+		double dyaw = gamma*dt;
 		x += dx;
 		y += dy;
 		yaw += dyaw;
@@ -41,6 +42,7 @@ beginner_tutorial::carPosition message;
 void yawRateCallback(const beginner_tutorial::steerAndVelocity::ConstPtr& msg){
 	double st = msg->steer;
 	double vel= msg->velocity;
+	ROS_INFO("get steer : %lf, vel : %lf",st,vel);
 	mycar.move(st,vel);
 	ROS_INFO("x : %lf,y : %lf,yaw : %lf",mycar.x,mycar.y,mycar.yaw);
 	message.x = mycar.x;
