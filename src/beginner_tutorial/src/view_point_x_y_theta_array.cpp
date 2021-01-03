@@ -9,7 +9,7 @@ ros::Publisher veiw_point_x_y_theta_array_pub;
 //std_msgs::Float32MultiArray veiw_point_x_y_theta_array;
 beginner_tutorial::carPosition veiw_point_x_y_theta_array;
 
-float buf_for_speed = 0.0f;
+float buf_for_speed = 8.33f;
 const float Tp = 1.8f; //教科書p258参照。L=40m, V=80km/hを安定とみなし用いた
 
 void speed_callback(const std_msgs::Float32::ConstPtr& speed){
@@ -28,7 +28,8 @@ void x_y_theta_array_callback(const beginner_tutorial::carPosition::ConstPtr& x_
 
 int main(int argc, char **argv){
 
-  ros::init(argc, argv, "forward_veiw_point");
+  ros::init(argc, argv, "veiw_point_x_y_theta_array");
+  ROS_INFO("view point node started!");
 
   ros::NodeHandle n;
   veiw_point_x_y_theta_array_pub = n.advertise<beginner_tutorial::carPosition>("view_point_x_y_theta_array",1000);

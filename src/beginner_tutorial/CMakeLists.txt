@@ -85,7 +85,8 @@ add_executable(steering src/steering.cpp)
 target_link_libraries(steering ${catkin_LIBRARIES})
 
 
-
+add_executable(first_publisher src/first_publisher.cpp)
+target_link_libraries(first_publisher ${catkin_LIBRARIES})
 
 add_executable(kuroki src/kuroki.cpp)
 add_dependencies(kuroki ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

@@ -38,7 +38,7 @@ ros::Publisher pub;
 
 void yawRateCallback(const beginner_tutorial::steerAndVelocity::ConstPtr& msg){
 	double st = msg->steer;
-	double vel=8.33f;
+	double vel= msg->velocity;
 	mycar.move(st,vel);
 	ROS_INFO("x : %lf,y : %lf,yaw : %lf",mycar.x,mycar.y,mycar.yaw);
 	beginner_tutorial::carPosition message;
@@ -51,7 +51,7 @@ void yawRateCallback(const beginner_tutorial::steerAndVelocity::ConstPtr& msg){
 
 int main(int argc,char **argv){
 	ros::init(argc,argv,"car_position");
-	ROS_INFO("node starged!");
+	ROS_INFO("kuroki node starged!");
 	ros::NodeHandle n;
 	pub = n.advertise<beginner_tutorial::carPosition>("car_position",1000);
 	ros::Subscriber sub = n.subscribe("positionTalker",1000,yawRateCallback);
