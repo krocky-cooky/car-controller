@@ -67,9 +67,12 @@ void view_point_x_y_theta_array_callback(const beginner_tutorial::carPosition::C
   delta_x = veiw_point_x_y_theta_array->x - buf_target_x_y_array[2*i];
   delta_y = veiw_point_x_y_theta_array->y - buf_target_x_y_array[2*i+1];
   temp_horizontal_diviation = sqrtf(powf(delta_x, 2.0f) + powf(delta_y, 2.0f));
-  if (temp_horizontal_diviation < horizontal_diviation.data){
+  delta_y= 1e-8;
+  if (temp_horizontal_diviation < abs(horizontal_diviation.data)){
+	  temp_horizontal_diviation *= -abs(delta_y)/delta_y;
     horizontal_diviation.data = temp_horizontal_diviation;
   } 
+  
   }
 
   ROS_INFO("horizontal_diviation: [%.1f]", horizontal_diviation.data);

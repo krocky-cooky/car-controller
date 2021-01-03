@@ -29,7 +29,7 @@ void timer_callback(const ros::TimerEvent& e){
     for (i=0; i<iter; i++) {
     x = buf_x_y_theta_array[0] + space*i;
     target_x_y_array.data[2*i] = x;
-    target_x_y_array.data[2*i+1] = 1+sin(6.28 * x / 166.6);
+    target_x_y_array.data[2*i+1] = 1;//+sin(6.28 * x / 166.6);
     //ROS_INFO("x: %.1f  y: %.1f", target_x_y_array.data[2*i], target_x_y_array.data[2*i+1]);
     }
     
@@ -61,7 +61,7 @@ int main(int argc, char **argv){
   target_x_y_array.data.resize(1005);
   target_x_y_array_pub = n.advertise<std_msgs::Float32MultiArray>("target_x_y_array", 10000);
   ros::Subscriber x_y_theta_array_sub = n.subscribe("car_position", 1000, x_y_theta_array_callback);
-  ros::Timer timer = n.createTimer(ros::Duration(5), timer_callback);
+  ros::Timer timer = n.createTimer(ros::Duration(0.1), timer_callback);
   ros::spin();
 
   return 0;
