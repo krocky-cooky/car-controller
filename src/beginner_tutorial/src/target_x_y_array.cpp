@@ -61,8 +61,9 @@ int main(int argc, char **argv){
   }
   target_x_y_array.data.resize(1005);
   target_x_y_array_pub = n.advertise<std_msgs::Float32MultiArray>("target_x_y_array", 10000);
+
   ros::Subscriber x_y_theta_array_sub = n.subscribe("car_position", 1000, x_y_theta_array_callback);
-  ros::Timer timer = n.createTimer(ros::Duration(5), timer_callback);
+  ros::Timer timer = n.createTimer(ros::Duration(0.1), timer_callback);
   ros::spin();
 
   return 0;
