@@ -20,7 +20,7 @@ void x_y_theta_array_callback(const beginner_tutorial::carPosition::ConstPtr& x_
 void target_x_y_array_callback(const std_msgs::Float32MultiArray::ConstPtr& target_x_y_array){
   int i;
   int iter;
-  iter = 500;
+  iter = 1000;
   ROS_INFO("target callback");
   for (i=0; i<iter; i++) {
   buf_target_x_y_array[2*i] = target_x_y_array->data.at(2*i);
@@ -53,7 +53,7 @@ void view_point_x_y_theta_array_callback(const beginner_tutorial::carPosition::C
   horizontal_diviation.data = 1000;
   int i;
   int iter;
-  iter = 500;
+  iter = 1000;
   for (i=0; i<iter; i++) {
   delta_x = veiw_point_x_y_theta_array->x - buf_target_x_y_array[2*i];
   delta_y = veiw_point_x_y_theta_array->y - buf_target_x_y_array[2*i+1];
@@ -95,7 +95,7 @@ int main(int argc, char **argv){
   ros::NodeHandle n;
   horizontal_diviation_pub = n.advertise<std_msgs::Float32>("horizontal_diviation", 1000);
   ros::Subscriber view_point_x_y_theta_array_sub = n.subscribe("view_point_x_y_theta_array", 1000, view_point_x_y_theta_array_callback);
-  ros::Subscriber target_x_y_array_sub = n.subscribe("target_x_y_array", 100000, target_x_y_array_callback);
+  ros::Subscriber target_x_y_array_sub = n.subscribe("target_x_y_array", 200000, target_x_y_array_callback);
   ros::Subscriber x_y_theta_array_sub = n.subscribe("car_position", 1000, x_y_theta_array_callback);
 
   ros::spin();

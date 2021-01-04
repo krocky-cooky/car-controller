@@ -26,7 +26,7 @@ void timer_callback(const ros::TimerEvent& e){
     float x;
     float t;
     float space = 0.2;
-    iter = 500;
+    iter = 1000;
     for (i=0; i<iter; i++) {
     /*
     y=1を目標コースにする時
@@ -68,8 +68,8 @@ int main(int argc, char **argv){
   for(int i = 0;i < 3;++i){
 	  buf_x_y_theta_array[i];
   }
-  target_x_y_array.data.resize(1005);
-  target_x_y_array_pub = n.advertise<std_msgs::Float32MultiArray>("target_x_y_array", 10000);
+  target_x_y_array.data.resize(2010);
+  target_x_y_array_pub = n.advertise<std_msgs::Float32MultiArray>("target_x_y_array", 20000);
 
   ros::Subscriber x_y_theta_array_sub = n.subscribe("car_position", 1000, x_y_theta_array_callback);
   ros::Timer timer = n.createTimer(ros::Duration(0.1), timer_callback);
