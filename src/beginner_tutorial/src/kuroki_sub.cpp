@@ -48,6 +48,7 @@ void yawRateCallback(const beginner_tutorial::steerAndVelocity::ConstPtr& msg){
 	message.x = mycar.x;
 	message.y = mycar.y;
 	message.yaw = mycar.yaw;
+	pub.publish(message);
 
 }
 
@@ -68,7 +69,7 @@ int main(int argc,char **argv){
 	ros::NodeHandle n;
 	pub = n.advertise<beginner_tutorial::carPosition>("car_position",1000);
 	ros::Subscriber sub = n.subscribe("positionTalker",1000,yawRateCallback);
-	ros::Timer timer = n.createTimer(ros::Duration(0.02),timerCallback);
+	//ros::Timer timer = n.createTimer(ros::Duration(0.02),timerCallback);
 	 
 	ros::spin();
 	return 0;

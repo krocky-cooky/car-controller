@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     msg = steerAndVelocity()
     steer = 0.0
-    velocity = 0.0
+    velocity = 10.0
     r = rospy.Rate(1)
     while not rospy.is_shutdown():
         try:

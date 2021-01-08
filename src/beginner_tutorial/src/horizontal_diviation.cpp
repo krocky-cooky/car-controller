@@ -9,7 +9,7 @@ std_msgs::Float32 horizontal_diviation;
 
 float buf_x_y_theta_array[3];
 float buf_view_point_x_y_theta_array[3];
-float buf_target_x_y_array[1000];
+float buf_target_x_y_array[2005];
 
 void x_y_theta_array_callback(const beginner_tutorial::carPosition::ConstPtr& x_y_theta_array){
   buf_x_y_theta_array[0] = x_y_theta_array->x;
@@ -20,7 +20,7 @@ void x_y_theta_array_callback(const beginner_tutorial::carPosition::ConstPtr& x_
 void target_x_y_array_callback(const std_msgs::Float32MultiArray::ConstPtr& target_x_y_array){
   int i;
   int iter;
-  iter = 500;
+  iter = 1000;
   ROS_INFO("target callback");
   for (i=0; i<iter; i++) {
   buf_target_x_y_array[2*i] = target_x_y_array->data.at(2*i);
@@ -53,7 +53,7 @@ void view_point_x_y_theta_array_callback(const beginner_tutorial::carPosition::C
   horizontal_diviation.data = 1000;
   int i;
   int iter;
-  iter = 500;
+  iter = 1000;
   for (i=0; i<iter; i++) {
   delta_x = veiw_point_x_y_theta_array->x - buf_target_x_y_array[2*i];
   delta_y = veiw_point_x_y_theta_array->y - buf_target_x_y_array[2*i+1];
@@ -87,7 +87,7 @@ int main(int argc, char **argv){
   for(int i = 0; i < 3; ++i){
 	  buf_view_point_x_y_theta_array[i] = 0;
   }
-  for(int i = 0;i < 1000; ++i){
+  for(int i = 0;i < 2000; ++i){
 	  buf_target_x_y_array[i] = 0;
   }
   ROS_INFO("horizontal_diviation node started!");

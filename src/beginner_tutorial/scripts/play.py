@@ -13,9 +13,6 @@ cnt = 0
 def call_back(data):
     x = data.x
     y = data.y
-    x_list.append(x)
-    y_list.append(y)
-    """
     yaw = data.yaw
     plt.scatter(
             x = x,
@@ -31,6 +28,7 @@ def call_back(data):
         plt.plot(x_sub,y_sub)
         plt.plot(x_sub,x_sub)
         plt.show()
+        """
 
 def listener():
     rospy.init_node('plot')
@@ -41,6 +39,5 @@ def listener():
 
 if __name__ == '__main__':
     listener()
-
 
 

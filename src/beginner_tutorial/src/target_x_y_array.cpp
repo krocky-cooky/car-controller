@@ -25,12 +25,16 @@ void timer_callback(const ros::TimerEvent& e){
     int iter;
     float x;
     float space = 0.2;
-    iter = 500;
+    iter = 1000;
     for (i=0; i<iter; i++) {
     x = buf_x_y_theta_array[0] + space*i;
-    target_x_y_array.data[2*i] = x;
+    //target_x_y_array.data[2*i] = x;
     //target_x_y_array.data[2*i+1] = 1+sin(6.28 * x / 166.6);
-    target_x_y_array.data[2*i+1] = 1;
+    //target_x_y_array.data[2*i+1] = x;
+    target_x_y_array.data[2*i] = buf_x_y_theta_array[0]+buf_x_y_theta_array[1];
+    target_x_y_array.data[2*i] /= 2;
+    target_x_y_array.data[2*i] += 0.14f*i;
+    target_x_y_array.data[2*i + 1] = target_x_y_array.data[2*i];
     //ROS_INFO("x: %.1f  y: %.1f", target_x_y_array.data[2*i], target_x_y_array.data[2*i+1]);
     }
     
@@ -59,7 +63,7 @@ int main(int argc, char **argv){
   for(int i = 0;i < 3;++i){
 	  buf_x_y_theta_array[i];
   }
-  target_x_y_array.data.resize(1005);
+  target_x_y_array.data.resize(2005);
   target_x_y_array_pub = n.advertise<std_msgs::Float32MultiArray>("target_x_y_array", 10000);
 
   ros::Subscriber x_y_theta_array_sub = n.subscribe("car_position", 1000, x_y_theta_array_callback);

@@ -6,6 +6,7 @@ beginner_tutorial
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/python2.7/dist-packages/beginner_tutorial/msg/_carPosition.py /home/adp/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tutorial/msg/_carPosition.py
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/python2.7/dist-packages/beginner_tutorial/msg/__init__.py /home/adp/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tutorial/msg/__init__.py
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/python2.7/dist-packages/beginner_tutorial/msg/_steerAndVelocity.py /home/adp/catkin_ws/devel/lib/python2.7/dist-packages/beginner_tutorial/msg/_steerAndVelocity.py
+/home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/beginner_tutorial/kuroki_sub /home/adp/catkin_ws/devel/lib/beginner_tutorial/kuroki_sub
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/beginner_tutorial/talker_cos /home/adp/catkin_ws/devel/lib/beginner_tutorial/talker_cos
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/beginner_tutorial/listener /home/adp/catkin_ws/devel/lib/beginner_tutorial/listener
 /home/adp/catkin_ws/devel/.private/beginner_tutorial/lib/beginner_tutorial/horizontal_diviation /home/adp/catkin_ws/devel/lib/beginner_tutorial/horizontal_diviation

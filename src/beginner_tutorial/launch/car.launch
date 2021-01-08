@@ -1,5 +1,5 @@
 <launch>
 	<node name="keyPublisher" pkg="beginner_tutorial" type="keyPublisher.py" output="screen" launch-prefix="gnome-terminal --command"/>
-	<node name="calculator" pkg="beginner_tutorial" type="kuroki" output="screen" launch-prefix="gnome-terminal --command" />
-	<node name="plotter" pkg="beginner_tutorial" type="plot.py" output="screen" launch-prefix="gnome-terminal --command" />
+	<node name="calculator" pkg="beginner_tutorial" type="kuroki_sub" output="screen" launch-prefix="gnome-terminal --command" />
+	<node name="plotter" pkg="beginner_tutorial" type="play.py" output="screen" launch-prefix="gnome-terminal --command" />
 </launch> 
